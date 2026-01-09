@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1f4037, #99f2c8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chatbox {
+            background: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f4037;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            background: #1f4037;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #145a32;
+        }
+
+        .response {
+            margin-top: 15px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-line;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: gray;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chatbox">
+    <h2>🏨 Hotel AI Chatbot</h2>
+
+    <!-- Hotel Image -->
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Hotel">
+
+    <form method="post">
+        <input type="text" name="message"
+               placeholder="Ask about room availability, prices, facilities..."
+               required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if response %}
+    <div class="response">
+        <strong>Bot:</strong><br>{{ response }}
+    </div>
+    {% endif %}
+
+    <div class="hint">
+        Try asking: "room availability", "price of deluxe room", "facilities", "check in time"
+    </div>
+</div>
+
+</body>
+</html>
